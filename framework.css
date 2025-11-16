@@ -1,0 +1,204 @@
+:root {
+    --primary-color: #925a05;
+    --secondary-color: #683c01;
+    --background-color: #e9dcc7c6;
+    --text-color: #2d2d2d;
+    --border-color: #0000001c;
+    --border-radius: 5px;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --transition-speed: 0.3s;
+    --highlighted-color: #f21818;
+    --highlighted-color-span: #f50b0b;
+    --hermitcraft-color-1: #1C5779;
+    --hermitcraft-color-2: #468991;
+    --hermitcraft-color-3: #F37C52;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+    font-size: 36px;
+    margin: 20px;
+    margin-bottom: 0;
+}
+
+p {
+    color: var(--text-color);
+    margin: 20px;
+    line-height: 1.6;
+    font-size: 24px;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid var(--text-color);
+    margin: 20px 0;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+.middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+
+.left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.row .left,
+.row .right {
+    flex: 1;
+    width: auto;
+    padding: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 90%;
+    max-width: 800px;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: 0px 0px 50px var(--primary-color);
+    margin: 20px auto;
+    transition: background-color var(--transition-speed);
+}
+
+.box {
+    background-color: var(--secondary-color);
+    border: solid 2px var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0px 0px 20px var(--primary-color);
+    color: var(--text-color);
+    margin: 20px;
+    transition: background-color var(--transition-speed);
+}
+
+.button {
+    background-color: var(--primary-color);
+    border: solid 2px var(--border-color);
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: background-color var(--transition-speed);
+    flex: 1;
+    min-height: 40px;
+}
+
+.highlight {
+    color: var(--highlighted-color);
+    text-shadow: 1px 1px 3px var(--highlighted-color);
+    display: inline-block;
+}
+
+.highlight span {
+    color: var(--highlighted-color-span);
+    text-shadow: 0px 0px 1px var(--highlighted-color);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        width: 100%;
+        padding: 15px;
+        margin: 15px auto;
+    }
+    
+    .row {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+    
+    .left {
+        padding-left: 15px;
+        width: 100%;
+        align-items: flex-start;
+    }
+    
+    .right {
+        padding-right: 15px;
+        width: 100%;
+        align-items: flex-end;
+    }
+    
+    .button {
+        min-height: 45px;
+        padding: 12px 10px;
+        width: 100%;
+    }
+    
+    p {
+        font-size: 18px;
+        margin: 15px;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        margin: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        width: 100%;
+        padding: 10px;
+        margin: 10px auto;
+    }
+    
+    .button {
+        min-height: 40px;
+        padding: 10px 8px;
+        font-size: 14px;
+        width: 100%;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        margin: 15px;
+        font-size: 18px;
+    }
+    
+    p {
+        font-size: 16px;
+        margin: 10px;
+    }
+}
